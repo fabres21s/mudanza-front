@@ -1,0 +1,8 @@
+<p>listar-furgon works!</p>
+<div id="furgones">
+  <ul class="furgones">
+    <li *ngFor="let item of listaFurgones | async">
+      <span>{{item.id}}</span> {{item.placa}}
+    </li>
+  </ul>
+</div>
