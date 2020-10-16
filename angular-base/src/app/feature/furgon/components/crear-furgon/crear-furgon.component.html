@@ -1,0 +1,15 @@
+<h1>Registrar Furgon</h1>
+<h3>Ejemplo validacion de formularios reactivos con directiva</h3>
+<form [formGroup]="furgonForm" (ngSubmit)="crear()">
+ 
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Placa:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="placa" name="placa" placeholder="Placa" required pattern="[0-9]+"
+        class="form-control" formControlName="placa">
+    </div>
+  </div>
+  <input type="submit" value="Guardar"  class="btn btn-success"/>
+</form>
