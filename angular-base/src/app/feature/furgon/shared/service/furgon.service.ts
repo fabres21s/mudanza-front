@@ -14,13 +14,13 @@ export class FurgonService {
     return this.http.doGet<Furgon[]>(`${environment.endpoint}/furgones`, this.http.optsName('consultar furgones'));
   }
 
-  public guardar2(furgon: Furgon) {
+  public guardar(furgon: Furgon) {
     return this.http.doPost<Furgon, boolean>(`${environment.endpoint}/furgones`, furgon,
                                                 this.http.optsName('crear productos'));
   }
 
 
-  public guardar(furgon: Furgon) {
+  public guardar2(furgon: Furgon) {
     return this.httpClient.post<any>(`${environment.endpoint}/furgones`, furgon);
   }
 }

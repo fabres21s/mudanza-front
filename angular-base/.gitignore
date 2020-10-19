@@ -46,3 +46,7 @@ testem.log
 Thumbs.db
 package-lock.json
 reports/
+
+#Protractor
+e2e/tmp
+e2e/debug.log

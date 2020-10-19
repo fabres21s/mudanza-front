@@ -7,9 +7,9 @@
       <label>Placa:</label>
     </div>
     <div class="col-sm-4">
-      <input validar type="text" id="placa" name="placa" placeholder="Placa" required pattern="[0-9]+"
+      <input validar type="text" id="placa" name="placa" placeholder="Placa" [(ngModel)] ="furgonForm.placa" pattern="[A-Z]{3}-[0-9]{3}"
         class="form-control" formControlName="placa">
     </div>
   </div>
-  <input type="submit" value="Guardar"  class="btn btn-success"/>
+  <input type="submit" value="Guardar" [disabled]="!furgonForm.valid" class="btn btn-success"/>
 </form>
