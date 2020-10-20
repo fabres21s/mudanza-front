@@ -1,67 +1,68 @@
 <h1>Programar mudaza</h1>
-<form [formGroup]="mudanzaForm" (ngSubmit)="crear()">
- 
-  <div class="row">
-	<div class="col-sm-2">
-      <label>Fecha:</label>
-    </div>
-    <div class="col-sm-4">
-      <input type="date" id="fechaMudanza" name="fechaMudanza" formControlName="fecha"
-       placeholder="yyyy-MM-dd"  required />
-    </div>
-  </div>
 
-  <div class="row">
-	<div class="col-sm-2">
-      <label>Horario:</label>
-    </div>
-    <div class="col-sm-4">
+<div class="container py-4">
+	<div class="card bg-gray text-black">
+		<div class="card-header" text="Programar Mudanza"></div>
+		<div class="card-body">
 
-	<select   formControlName="tarifaHorarioId" (ngModelChange)="consultarDisponibles()">
-    <option *ngFor="let horario of horarios" [ngValue]="horario.id">
-        {{horario.hora}}
-    </option>
-	</select>
-      
-    </div>
-  </div>
+			<form [formGroup]="mudanzaForm" (ngSubmit)="crear()">
 
-  
-  <div class="row">
-	<div class="col-sm-2">
-      <label>Furgon:</label>
-    </div>
-    <div class="col-sm-4">
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Fecha</label>
+					<div class="col-sm-4">
+						<input type="date" id="fechaMudanza" name="fechaMudanza" formControlName="fecha" class="form-control"
+							placeholder="yyyy-MM-dd" required />
+					</div>
+				</div>
 
-	<select   formControlName="furgonId" >
-    <option *ngFor="let furgon of listaFurgones| async" [ngValue]="furgon.id">
-        {{furgon.placa}}
-    </option>
-	</select>
-      
-    </div>
-  </div> 
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Horario</label>
+					<div class="col-sm-4">
 
-  <div>
-    <div class="col-sm-2">
-      <label>Direccion Inicial:</label>
-    </div>
-    <div class="col-sm-4">
-      <input validar type="text" id="direccionInicial" name="direccionInicial"  
-        class="form-control" formControlName="direccionInicial">
-    </div>
-  </div>
+						<select formControlName="tarifaHorarioId" (ngModelChange)="consultarDisponibles()" class="form-control">
+							<option *ngFor="let horario of horarios" [ngValue]="horario.id">
+								{{horario.hora}}
+							</option>
+						</select>
+
+					</div>
+				</div>
 
 
-  <div class="row">
-    <div class="col-sm-2">
-      <label>Direccion Final:</label>
-    </div>
-    <div class="col-sm-4">
-      <input validar type="text" id="direccionFinal" name="direccionFinal"  
-        class="form-control" formControlName="direccionFinal">
-    </div>
-  </div>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Furgon</label>
+					<div class="col-sm-4">
 
-  <input type="submit" id="btnCrearMudanza" value="Guardar" [disabled]="!mudanzaForm.valid" class="btn btn-success"/>
-</form>
+						<select formControlName="furgonId" class="form-control">
+							<option *ngFor="let furgon of listaFurgones| async" [ngValue]="furgon.id">
+								{{furgon.placa}}
+							</option>
+						</select>
+
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Direccion inicial</label>
+					<div class="col-sm-4">
+						<input validar type="text" id="direccionInicial" name="direccionInicial" class="form-control"
+							formControlName="direccionInicial">
+					</div>
+				</div>
+
+
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Direccion final</label>
+					<div class="col-sm-4">
+						<input validar type="text" id="direccionFinal" name="direccionFinal" class="form-control"
+							formControlName="direccionFinal">
+					</div>
+				</div>
+
+				<input type="submit" id="btnCrearMudanza" value="Guardar" [disabled]="!mudanzaForm.valid"
+					class="btn btn-primary" />
+			</form>
+
+		</div>
+	</div>
+</div>

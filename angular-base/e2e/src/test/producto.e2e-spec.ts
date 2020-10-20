@@ -24,6 +24,7 @@ describe('workspace-project Producto', () => {
         producto.ingresarDescripcion(DESCRIPCION_PRODUCTO);
 
         // Adicionamos las validaciones despues de la creación
+        
         // expect(<>).toEqual(<>);
     });
 

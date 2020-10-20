@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MudanzaService } from '../../shared/service/mudanza.service';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { Observable } from 'rxjs';
 import { Furgon } from '@furgon/shared/model/furgon'; 
 import { FurgonService } from '@furgon/shared/service/furgon.service';
 import { Router } from '@angular/router';
