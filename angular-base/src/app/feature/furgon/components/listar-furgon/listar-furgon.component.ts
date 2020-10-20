@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
+
 import { Furgon } from '@furgon/shared/model/furgon'; 
 import { FurgonService } from '@furgon/shared/service/furgon.service';
 

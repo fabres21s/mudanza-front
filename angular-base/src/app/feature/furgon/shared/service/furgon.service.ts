@@ -14,6 +14,10 @@ export class FurgonService {
     return this.http.doGet<Furgon[]>(`${environment.endpoint}/furgones`, this.http.optsName('consultar furgones'));
   }
 
+    public consultarDisponibles(tarifaHorarioId: number, fecha: string) {
+      return this.http.doGet<Furgon[]>(`${environment.endpoint}/furgones/disponibles/`+tarifaHorarioId + '/'+fecha, this.http.optsName('consultar furgones'));
+  }
+
   public guardar(furgon: Furgon) {
     return this.http.doPost<Furgon, boolean>(`${environment.endpoint}/furgones`, furgon,
                                                 this.http.optsName('crear productos'));

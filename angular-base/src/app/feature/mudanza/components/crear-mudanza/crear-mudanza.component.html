@@ -1,0 +1,67 @@
+<h1>Programar mudaza</h1>
+<form [formGroup]="mudanzaForm" (ngSubmit)="crear()">
+ 
+  <div class="row">
+	<div class="col-sm-2">
+      <label>Fecha:</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="date" id="fechaMudanza" name="fechaMudanza" formControlName="fecha"
+       placeholder="yyyy-MM-dd"  required />
+    </div>
+  </div>
+
+  <div class="row">
+	<div class="col-sm-2">
+      <label>Horario:</label>
+    </div>
+    <div class="col-sm-4">
+
+	<select   formControlName="tarifaHorarioId" (ngModelChange)="consultarDisponibles()">
+    <option *ngFor="let horario of horarios" [ngValue]="horario.id">
+        {{horario.hora}}
+    </option>
+	</select>
+      
+    </div>
+  </div>
+
+  
+  <div class="row">
+	<div class="col-sm-2">
+      <label>Furgon:</label>
+    </div>
+    <div class="col-sm-4">
+
+	<select   formControlName="furgonId" >
+    <option *ngFor="let furgon of listaFurgones| async" [ngValue]="furgon.id">
+        {{furgon.placa}}
+    </option>
+	</select>
+      
+    </div>
+  </div> 
+
+  <div>
+    <div class="col-sm-2">
+      <label>Direccion Inicial:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="direccionInicial" name="direccionInicial"  
+        class="form-control" formControlName="direccionInicial">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Direccion Final:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="direccionFinal" name="direccionFinal"  
+        class="form-control" formControlName="direccionFinal">
+    </div>
+  </div>
+
+  <input type="submit" id="btnCrearMudanza" value="Guardar" [disabled]="!mudanzaForm.valid" class="btn btn-success"/>
+</form>

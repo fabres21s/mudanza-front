@@ -1,0 +1,11 @@
+<p>listar-mudanza works!</p>
+<div id="mudanzas">
+  <ul class="mudanzas">
+    <li *ngFor="let item of listaMudanzas | async">
+      <span>{{item.id}}</span> 
+      <span>{{item.placa}}</span>
+      <span>{{item.direccionInicial}}</span>
+      <span>{{item.fechaInicial}}</span>
+    </li>
+  </ul>
+</div>

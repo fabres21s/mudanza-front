@@ -23,8 +23,8 @@ export class CrearFurgonComponent implements OnInit {
   crear() {
    this.furgonService.guardar(this.furgonForm.value).subscribe(
 				response => {
-          console.log(response.valor);
-					if(response.valor > 0){
+          console.log(response['valor']);
+					if(response['valor'] > 0){
 						this._router.navigate(['/furgon/listar']);
 					}else{
 						console.log(response);
@@ -39,7 +39,7 @@ export class CrearFurgonComponent implements OnInit {
 
   private construirFormularioProducto() {
     this.furgonForm = new FormGroup({
-      placa: new FormControl('sdfgsdghsd', [Validators.required, Validators.minLength(LONGITUD_MINIMA_PERMITIDA_TEXTO),
+      placa: new FormControl('', [Validators.required, Validators.minLength(LONGITUD_MINIMA_PERMITIDA_TEXTO),
                                                              Validators.maxLength(LONGITUD_MAXIMA_PERMITIDA_TEXTO)])
     });
   }

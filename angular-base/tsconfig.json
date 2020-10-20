@@ -36,6 +36,9 @@
        "@furgon/*": [
         "src/app/feature/furgon/*"
       ],
+      "@mudanza/*": [
+        "src/app/feature/mudanza/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ]
